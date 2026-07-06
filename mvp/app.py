@@ -1,10 +1,16 @@
 import streamlit as st
 import cv2
 import numpy as np
-from PIL import Image
-import io
 # Import các hàm từ pipeline có sẵn của bạn
-from scanner_mvp import resize_image, find_corner_markers, four_point_transform, order_points
+from scanner_mvp import (
+    resize_image,
+    find_corner_markers,
+    four_point_transform,
+    order_points,
+    preprocess_image_otsu,
+    whiten_page,
+    image_to_pdf_bytes
+)
 
 st.set_page_config(layout="wide", page_title="Smart Document Scanner Visualizer")
 st.title("📸 Smart Document Scanner Pipeline Visualizer")
@@ -50,9 +56,7 @@ shape[1]}x{image_resized.shape[0]}).")
 
     with tab2:
         st.write("Nhị phân hóa bằng phương pháp Otsu + Gaussian Blur để làm nổi bật các ô vuông góc.")
-        gray = cv2.cvtColor(image_resized, cv2.COLOR_BGR2GRAY)
-        blurred = cv2.GaussianBlur(gray, (5, 5), 0)
-        _, thresh = cv2.threshold(blurred, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
+        thresh = preprocess_image_otsu(image_resized)
         st.image(thresh, caption="Ảnh nhị phân (Otsu)", use_container_width=True)
 
     with tab3:
@@ -78,9 +82,7 @@ shape[1]}x{image_resized.shape[0]}).")
     with tab5:
         if screenCnt is not None:
             # Tẩy trắng nền
-            warped_gray = cv2.cvtColor(warped, cv2.COLOR_BGR2GRAY)
-            T = cv2.adaptiveThreshold(warped_gray, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 21,
-10)
+            T = whiten_page(warped)
 
             col_final, col_download = st.columns([2, 1])
             with col_final:
@@ -88,10 +90,7 @@ shape[1]}x{image_resized.shape[0]}).")
 
             with col_download:
                 # Đóng gói ảnh thành PDF trong bộ nhớ (In-memory bytes)
-                pil_img = Image.fromarray(T)
-                pdf_buffer = io.BytesIO()
-                pil_img.save(pdf_buffer, format="PDF", resolution=100.0)
-                pdf_bytes = pdf_buffer.getvalue()
+                pdf_bytes = image_to_pdf_bytes(T)
 
                 # Nút tải file PDF về máy tính
                 st.download_button(

@@ -3,6 +3,7 @@ import numpy as np
 from PIL import Image
 import os
 import itertools
+import io
 
 def resize_image(image, height=None, width=None):
     """Giữ nguyên tỷ lệ khung hình khi resize ảnh"""
@@ -65,12 +66,34 @@ def four_point_transform(image, pts):
     
     return warped
 
-def find_corner_markers(image):
-    """Tìm 4 ô vuông ở 4 góc tờ giấy và trả về tọa độ tâm của chúng"""
+def preprocess_image_otsu(image):
+    """Nhị phân hóa bằng phương pháp Otsu + Gaussian Blur để làm nổi bật các ô vuông góc"""
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     blurred = cv2.GaussianBlur(gray, (5, 5), 0)
     _, thresh = cv2.threshold(blurred, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
-    
+    return thresh
+
+def whiten_page(image):
+    """Tẩy trắng trang bằng phương pháp Adaptive Thresholding (kiểu CamScanner)"""
+    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    T = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 21, 10)
+    return T
+
+def image_to_pdf_bytes(image_np):
+    """Chuyển đổi ảnh (Numpy Array) thành dữ liệu PDF (bytes) trong bộ nhớ"""
+    pil_img = Image.fromarray(image_np)
+    pdf_buffer = io.BytesIO()
+    pil_img.save(pdf_buffer, format="PDF", resolution=100.0)
+    return pdf_buffer.getvalue()
+
+def save_image_as_pdf(image_np, output_path):
+    """Lưu ảnh (Numpy Array) thành file PDF"""
+    pil_img = Image.fromarray(image_np)
+    pil_img.save(output_path, "PDF", resolution=100.0)
+
+def find_corner_markers(image):
+    """Tìm 4 ô vuông ở 4 góc tờ giấy và trả về tọa độ tâm của chúng"""
+    thresh = preprocess_image_otsu(image)
     cnts, _ = cv2.findContours(thresh, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
     
     candidates = []
@@ -166,14 +189,11 @@ def scan_document_to_pdf(image_path, output_pdf_path):
     warped = four_point_transform(orig, screenCnt.reshape(4, 2) * ratio)
     
     # --- BƯỚC 5: TẨY TRẮNG VÀ XUẤT PDF ---
-    warped_gray = cv2.cvtColor(warped, cv2.COLOR_BGR2GRAY)
-    
     # Sử dụng Adaptive Thresholding để làm trắng nền (đặc trưng của CamScanner)
-    T = cv2.adaptiveThreshold(warped_gray, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 21, 10)
+    T = whiten_page(warped)
     
     # Xuất ra PDF sử dụng PIL
-    pil_img = Image.fromarray(T)
-    pil_img.save(output_pdf_path, "PDF", resolution=100.0)
+    save_image_as_pdf(T, output_pdf_path)
     print(f"Thành công! Đã lưu tài liệu thành file {output_pdf_path}")
 
 if __name__ == "__main__":
