@@ -1,103 +1,109 @@
 import streamlit as st
 import cv2
 import numpy as np
-# Import các hàm từ pipeline có sẵn của bạn
-from scanner_mvp import (
-    resize_image,
-    find_corner_markers,
-    four_point_transform,
-    order_points,
-    preprocess_image_otsu,
-    whiten_page,
-    image_to_pdf_bytes
-)
 
-st.set_page_config(layout="wide", page_title="Smart Document Scanner Visualizer")
-st.title("📸 Smart Document Scanner Pipeline Visualizer")
-st.write("Tải ảnh chụp bài trắc nghiệm lên để xem trực quan từng bước xử lý của thuật toán.")
+st.set_page_config(page_title="Ceramic Tile Defect Detection", layout="wide")
 
-# 1. Bộ tải ảnh lên (File Uploader)
-uploaded_file = st.file_uploader("Chọn ảnh chụp bài trắc nghiệm...", type=["jpg", "jpeg", "png"])
+st.title("Phát hiện Lỗi Gạch Men - MVP Demo")
+st.markdown("Pipeline: **Grayscale -> Median Filter -> Canny Edge -> Morphology -> Contours -> Classification**")
 
-if uploaded_file is not None:
-    # Đọc file ảnh từ bytes sang OpenCV format
-    file_bytes = np.asarray(bytearray(uploaded_file.read()), dtype=np.uint8)
-    orig = cv2.imdecode(file_bytes, 1) # BGR image
+# Load image
+@st.cache_data
+def load_image(path):
+    img = cv2.imread(path)
+    if img is None:
+        return None
+    return cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
-    # Tạo các cột hiển thị thông tin ảnh gốc
-    col1, col2 = st.columns(2)
-    with col1:
-        st.subheader("Ảnh chụp gốc")
-        st.image(cv2.cvtColor(orig, cv2.COLOR_BGR2RGB), use_container_width=True)
+image_path = 'sample_tile.jpg'
+img = load_image(image_path)
 
-    # Chạy pipeline xử lý
-    ratio = orig.shape[0] / 500.0
-    image_resized = resize_image(orig, height=500)
+if img is None:
+    st.error("Không tìm thấy file `sample_tile.jpg`. Hãy chạy file `generate_sample.py` trước!")
+    st.stop()
 
-    # Bước 3: Tìm corner markers
-    screenCnt = find_corner_markers(image_resized)
+# --- SIDEBAR (Parameter Sweep) ---
+st.sidebar.header("Khảo sát tham số (Parameter Sweeps)")
 
-    # Dùng tabs để visualize từng bước của pipeline
-    st.markdown("---")
-    st.subheader("🔍 Chi tiết từng bước trong Pipeline")
+st.sidebar.subheader("1. Lọc nhiễu (Tiền xử lý)")
+median_ksize = st.sidebar.slider("Median Filter Kernel Size", min_value=1, max_value=15, step=2, value=5)
 
-    tab1, tab2, tab3, tab4, tab5 = st.tabs([
-        "1. Ảnh Thu nhỏ (Resized)",
-        "2. Nhị phân hóa (Otsu)",
-        "3. Dò tìm góc (Corners)",
-        "4. Duỗi phẳng (Warped)",
-        "5. Tẩy trắng & Xuất PDF (Final)"
-    ])
+st.sidebar.subheader("2. Phát hiện biên (Canny)")
+canny_min = st.sidebar.slider("Canny Min Value", 0, 255, 30)
+canny_max = st.sidebar.slider("Canny Max Value", 0, 255, 100)
 
-    with tab1:
-        st.write(f"Ảnh được resize về chiều cao 500px (Kích thước hiện tại: {image_resized.
-shape[1]}x{image_resized.shape[0]}).")
-        st.image(cv2.cvtColor(image_resized, cv2.COLOR_BGR2RGB), use_container_width=True)
+st.sidebar.subheader("3. Toán tử hình thái học (Morphology)")
+morph_ksize_x = st.sidebar.slider("Closing Kernel Size X", 1, 31, step=2, value=9)
+morph_ksize_y = st.sidebar.slider("Closing Kernel Size Y", 1, 31, step=2, value=9)
 
-    with tab2:
-        st.write("Nhị phân hóa bằng phương pháp Otsu + Gaussian Blur để làm nổi bật các ô vuông góc.")
-        thresh = preprocess_image_otsu(image_resized)
-        st.image(thresh, caption="Ảnh nhị phân (Otsu)", use_container_width=True)
+st.sidebar.subheader("4. Phân loại (Classification Rules)")
+min_area = st.sidebar.slider("Min Area (Loại bỏ nhiễu)", 1, 100, value=10)
+aspect_ratio_thresh = st.sidebar.slider("Aspect Ratio Threshold (Phân biệt Nứt/Lỗ)", 1.0, 5.0, value=2.0)
 
-    with tab3:
-        st.write("Tọa độ 4 góc tìm được (được vẽ đè lên ảnh để kiểm tra độ chính xác):")
-        img_corners = image_resized.copy()
-        if screenCnt is not None:
-            # Vẽ các chấm tròn đỏ tại 4 tâm ô vuông phát hiện được
-            for pt in screenCnt:
-                cv2.circle(img_corners, (int(pt[0]), int(pt[1])), 8, (0, 0, 255), -1)
-            st.image(cv2.cvtColor(img_corners, cv2.COLOR_BGR2RGB), use_container_width=True)
-            st.success("Đã tìm thấy 4 ô định vị thành công!")
-        else:
-            st.error("Không tìm thấy 4 ô vuông góc định vị. Vui lòng kiểm tra lại chất lượng ảnh.")
+# --- PIPELINE THỰC THI ---
 
-    with tab4:
-        if screenCnt is not None:
-            # Áp dụng tỷ lệ ratio để nhân tọa độ lên kích thước gốc và thực hiện biến đổi phối cảnh
-            warped = four_point_transform(orig, screenCnt.reshape(4, 2) * ratio)
-            st.image(cv2.cvtColor(warped, cv2.COLOR_BGR2RGB), use_container_width=True)
-        else:
-            st.warning("Không có dữ liệu 4 góc để thực hiện Warp.")
+# Bước 1: Tiền xử lý
+gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
+blurred = cv2.medianBlur(gray, median_ksize)
 
-    with tab5:
-        if screenCnt is not None:
-            # Tẩy trắng nền
-            T = whiten_page(warped)
+# Bước 2: Edge Detection
+edges = cv2.Canny(blurred, canny_min, canny_max)
 
-            col_final, col_download = st.columns([2, 1])
-            with col_final:
-                st.image(T, caption="Kết quả quét cuối cùng (Chữ đen nền trắng)", use_container_width=True)
+# Bước 3: Morphology
+kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (morph_ksize_x, morph_ksize_y))
+closed = cv2.morphologyEx(edges, cv2.MORPH_CLOSE, kernel)
 
-            with col_download:
-                # Đóng gói ảnh thành PDF trong bộ nhớ (In-memory bytes)
-                pdf_bytes = image_to_pdf_bytes(T)
+# Bước 4: Trích xuất đặc trưng & Phân loại
+contours, _ = cv2.findContours(closed, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+output_img = img.copy()
 
-                # Nút tải file PDF về máy tính
-                st.download_button(
-                    label="📥 Tải xuống file PDF kết quả",
-                    data=pdf_bytes,
-                    file_name="scanned_omr.pdf",
-                    mime="application/pdf"
-                )
-        else:
-            st.warning("Vui lòng sửa lỗi nhận diện góc để xem kết quả cuối cùng.")
+results = []
+for cnt in contours:
+    area = cv2.contourArea(cnt)
+    if area < min_area:
+        continue
+        
+    x, y, w, h = cv2.boundingRect(cnt)
+    aspect_ratio = float(w) / h
+    # Lật ngược aspect ratio nếu h > w để luôn có tỷ lệ >= 1
+    if aspect_ratio < 1:
+        aspect_ratio = 1 / aspect_ratio
+        
+    # Phân loại đơn giản bằng Rule-based (thay thế SVM cho bản MVP)
+    if aspect_ratio > aspect_ratio_thresh:
+        label = "Crack"
+        color = (255, 0, 0) # Red
+    else:
+        label = "Pin-hole"
+        color = (0, 0, 255) # Blue
+        
+    cv2.rectangle(output_img, (x, y), (x+w, y+h), color, 2)
+    cv2.putText(output_img, label, (x, y-5), cv2.FONT_HERSHEY_SIMPLEX, 0.5, color, 1)
+    
+    results.append({"Label": label, "Area": area, "Aspect Ratio": round(aspect_ratio, 2)})
+
+# --- HIỂN THỊ TRỰC QUAN (VISUALIZATION) ---
+
+col1, col2 = st.columns(2)
+with col1:
+    st.subheader("1. Ảnh gốc")
+    st.image(img, use_column_width=True)
+    
+    st.subheader("3. Canny Edge Detection")
+    st.image(edges, use_column_width=True, caption=f"Threshold: {canny_min}-{canny_max}")
+
+with col2:
+    st.subheader("2. Lọc nhiễu (Median Blur)")
+    st.image(blurred, use_column_width=True, caption=f"Kernel: {median_ksize}x{median_ksize}", clamp=True)
+    
+    st.subheader("4. Hình thái học (Closing)")
+    st.image(closed, use_column_width=True, caption=f"Kernel: {morph_ksize_x}x{morph_ksize_y}", clamp=True)
+
+st.markdown("---")
+st.subheader("5. Kết quả Phân loại cuối cùng (Result)")
+col3, col4 = st.columns([2, 1])
+with col3:
+    st.image(output_img, use_column_width=True)
+with col4:
+    st.write("**Danh sách lỗi phát hiện:**")
+    st.table(results)
