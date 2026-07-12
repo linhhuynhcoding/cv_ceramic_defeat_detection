@@ -1,0 +1,79 @@
+{
+  "images_evaluated": 20,
+  "per_class_iou_0_3": {
+    "crack": {
+      "precision": 1.0,
+      "recall": 0.015151515151515152,
+      "f1": 0.029850746268656716,
+      "support": 66
+    },
+    "exfoliation": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 7
+    },
+    "spalling": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 79
+    },
+    "background": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 0
+    }
+  },
+  "detection_iou_0_3": {
+    "tp": 1,
+    "fp": 0,
+    "fn": 151,
+    "precision": 1.0,
+    "recall": 0.006578947368421052,
+    "f1": 0.013071895424836602
+  },
+  "detection_iou_0_5": {
+    "tp": 1,
+    "fp": 0,
+    "fn": 151,
+    "precision": 1.0,
+    "recall": 0.006578947368421052,
+    "f1": 0.013071895424836602
+  },
+  "confusion_matrix_labels": [
+    "crack",
+    "exfoliation",
+    "spalling",
+    "background"
+  ],
+  "confusion_matrix": [
+    [
+      1,
+      0,
+      0,
+      65
+    ],
+    [
+      0,
+      0,
+      0,
+      7
+    ],
+    [
+      0,
+      0,
+      0,
+      79
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ]
+  ],
+  "confusion_matrix_path": "outputs/reports/confusion_matrix.png",
+  "sample_predictions_dir": "outputs/reports/sample_predictions"
+}

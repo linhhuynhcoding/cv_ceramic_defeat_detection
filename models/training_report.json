@@ -1,0 +1,63 @@
+{
+  "created_at": "2026-07-12T13:09:19.620281+00:00",
+  "dataset_root": "2024_ground_wall_tile_dataset_latest.v2i.coco",
+  "model_type": "ExtraTreesClassifier",
+  "feature_count": 38,
+  "feature_names": [
+    "a_mean",
+    "a_std",
+    "area",
+    "area_ratio",
+    "aspect_ratio",
+    "b_mean",
+    "b_std",
+    "circularity",
+    "dark_ratio",
+    "edge_density",
+    "extent",
+    "gray_mean",
+    "gray_std",
+    "grid_overlap_ratio",
+    "height",
+    "l_mean",
+    "l_std",
+    "lbp_0",
+    "lbp_1",
+    "lbp_2",
+    "lbp_3",
+    "lbp_4",
+    "lbp_5",
+    "lbp_6",
+    "lbp_7",
+    "lbp_8",
+    "lbp_9",
+    "local_variance",
+    "max_side",
+    "min_side",
+    "perimeter",
+    "solidity",
+    "source_crack_branch",
+    "source_exfoliation_branch",
+    "source_gt_seed",
+    "source_spalling_branch",
+    "surround_contrast",
+    "width"
+  ],
+  "raw_class_counts": {
+    "background": 2088,
+    "spalling": 572,
+    "crack": 510,
+    "exfoliation": 6
+  },
+  "balanced_class_counts": {
+    "background": 2088,
+    "spalling": 1200,
+    "crack": 1200,
+    "exfoliation": 1200
+  },
+  "annotation_counts": {
+    "spalling": 15392,
+    "crack": 14269,
+    "exfoliation": 201
+  }
+}
