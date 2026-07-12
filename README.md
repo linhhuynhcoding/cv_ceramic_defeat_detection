@@ -1,2 +1,3 @@
-# cv_amcg_system
-010412103605 - UTH - Computer Vision - Group D
+# Magnetic Tile Surface Defect Dataset
+
+Magnetic Tile Surface Defect is a dataset for instance segmentation, semantic segmentation, and object detection tasks.
