@@ -5,7 +5,7 @@ from dataclasses import dataclass
 import cv2
 import numpy as np
 
-from src.grid import detect_grid_mask
+from src.grid import detect_grid_debug, detect_grid_mask
 from src.preprocess import preprocess_image
 
 
@@ -63,7 +63,8 @@ def generate_candidate_debug(image_bgr: np.ndarray, params: dict | None = None) 
     pre = preprocess_image(image_bgr, params)
     gray = pre["enhanced_gray"]
     valid = pre["valid_tile_mask"]
-    grid = detect_grid_mask(pre, params)
+    grid_debug = detect_grid_debug(pre, params)
+    grid = grid_debug["mask"]
     non_grid = cv2.bitwise_and(valid, cv2.bitwise_not(grid))
     h, w = gray.shape
 
@@ -165,6 +166,13 @@ def generate_candidate_debug(image_bgr: np.ndarray, params: dict | None = None) 
     return {
         "preprocessed": pre,
         "grid_mask": grid,
+        "grid_dark": grid_debug["dark"],
+        "grid_horizontal": grid_debug["horizontal"],
+        "grid_vertical": grid_debug["vertical"],
+        "grid_morph_combined": grid_debug["morph_combined"],
+        "grid_edges": grid_debug["edges"],
+        "grid_hough_lines": grid_debug["hough_lines"],
+        "grid_after_hough": grid_debug["mask_after_hough"],
         "non_grid_mask": non_grid,
         "blackhat": blackhat,
         "crack_threshold": crack_thresh,

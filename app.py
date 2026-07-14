@@ -53,9 +53,11 @@ def _processing_parameter_controls(prefix: str = "") -> dict:
         with c1:
             params["grid_dark_threshold"] = st.slider(f"{prefix}Grid dark threshold", 20, 180, 95, 1)
             params["grid_horizontal_scale"] = st.slider(f"{prefix}Horizontal kernel divisor", 4, 40, 18, 1)
+            params["grid_canny_low"] = st.slider(f"{prefix}Grid Canny low", 0, 200, 40, 1)
         with c2:
             params["grid_vertical_scale"] = st.slider(f"{prefix}Vertical kernel divisor", 4, 40, 12, 1)
             params["grid_dilation_kernel"] = st.slider(f"{prefix}Grid dilation kernel", 1, 21, 5, 2)
+            params["grid_canny_high"] = st.slider(f"{prefix}Grid Canny high", 20, 300, 120, 1)
         with c3:
             params["hough_threshold"] = st.slider(f"{prefix}Hough threshold", 5, 120, 45, 1)
             params["hough_max_gap"] = st.slider(f"{prefix}Hough max line gap", 0, 40, 12, 1)
@@ -209,11 +211,19 @@ def page_processing_lab() -> None:
             _show_bgr("Valid tile mask", mask_to_bgr(debug["preprocessed"]["valid_tile_mask"]))
 
     with grid_tab:
-        c1, c2 = st.columns(2)
+        c1, c2, c3, c4 = st.columns(4)
         with c1:
-            _show_bgr("Detected grid/grout mask", mask_to_bgr(debug["grid_mask"]))
+            _show_bgr("1. Dark threshold", mask_to_bgr(debug["grid_dark"]))
+            _show_bgr("5. Canny edges", mask_to_bgr(debug["grid_edges"]))
         with c2:
-            _show_bgr("Non-grid valid mask", mask_to_bgr(debug["non_grid_mask"]))
+            _show_bgr("2. Horizontal morph", mask_to_bgr(debug["grid_horizontal"]))
+            _show_bgr("6. Hough lines", mask_to_bgr(debug["grid_hough_lines"]))
+        with c3:
+            _show_bgr("3. Vertical morph", mask_to_bgr(debug["grid_vertical"]))
+            _show_bgr("7. Final Grid Mask", mask_to_bgr(debug["grid_mask"]))
+        with c4:
+            _show_bgr("4. Combined morph", mask_to_bgr(debug["grid_morph_combined"]))
+            _show_bgr("8. Non-grid valid", mask_to_bgr(debug["non_grid_mask"]))
 
     with crack_tab:
         c1, c2, c3 = st.columns(3)
