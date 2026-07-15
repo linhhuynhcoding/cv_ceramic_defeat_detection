@@ -1,0 +1,44 @@
+{
+  "dataset_root": "2024_ground_wall_tile_dataset_latest.v2i.coco",
+  "model_output": "models/crack_svm_smoke.joblib",
+  "seed": 42,
+  "negative_ratio": 1.0,
+  "max_images": 60,
+  "train_samples": 1088,
+  "valid_samples": 454,
+  "train_label_counts": {
+    "1": 544,
+    "0": 544
+  },
+  "valid_label_counts": {
+    "1": 227,
+    "0": 227
+  },
+  "classification_report": {
+    "non_crack": {
+      "precision": 0.6720647773279352,
+      "recall": 0.7312775330396476,
+      "f1-score": 0.70042194092827,
+      "support": 227.0
+    },
+    "crack": {
+      "precision": 0.7053140096618358,
+      "recall": 0.6431718061674009,
+      "f1-score": 0.6728110599078341,
+      "support": 227.0
+    },
+    "accuracy": 0.6872246696035242,
+    "macro avg": {
+      "precision": 0.6886893934948854,
+      "recall": 0.6872246696035242,
+      "f1-score": 0.686616500418052,
+      "support": 454.0
+    },
+    "weighted avg": {
+      "precision": 0.6886893934948856,
+      "recall": 0.6872246696035242,
+      "f1-score": 0.686616500418052,
+      "support": 454.0
+    }
+  }
+}

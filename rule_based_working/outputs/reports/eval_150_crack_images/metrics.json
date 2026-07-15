@@ -1,0 +1,22 @@
+{
+  "iou_0.25": {
+    "true_positive": 705,
+    "false_positive": 28662,
+    "false_negative": 1755,
+    "precision": 0.024006537950761058,
+    "recall": 0.2865853658536585,
+    "f1": 0.044302007729286455,
+    "evaluated_images": 619,
+    "false_positives_per_image": 46.30371567043619
+  },
+  "iou_0.50": {
+    "true_positive": 291,
+    "false_positive": 29076,
+    "false_negative": 2169,
+    "precision": 0.009909081622229032,
+    "recall": 0.11829268292682926,
+    "f1": 0.018286360637194833,
+    "evaluated_images": 619,
+    "false_positives_per_image": 46.972536348949916
+  }
+}

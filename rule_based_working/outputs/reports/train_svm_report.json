@@ -1,0 +1,45 @@
+{
+  "dataset_root": "2024_ground_wall_tile_dataset_latest.v2i.coco",
+  "model_output": "models/crack_svm.joblib",
+  "seed": 42,
+  "negative_ratio": 4.0,
+  "hard_negatives": null,
+  "max_images": null,
+  "train_samples": 240980,
+  "valid_samples": 12300,
+  "train_label_counts": {
+    "1": 48196,
+    "0": 192784
+  },
+  "valid_label_counts": {
+    "1": 2460,
+    "0": 9840
+  },
+  "classification_report": {
+    "non_crack": {
+      "precision": 0.968802495800336,
+      "recall": 0.8205284552845529,
+      "f1-score": 0.8885220644877297,
+      "support": 9840.0
+    },
+    "crack": {
+      "precision": 0.5547150781643974,
+      "recall": 0.8943089430894309,
+      "f1-score": 0.6847183317771554,
+      "support": 2460.0
+    },
+    "accuracy": 0.8352845528455285,
+    "macro avg": {
+      "precision": 0.7617587869823667,
+      "recall": 0.8574186991869919,
+      "f1-score": 0.7866201981324425,
+      "support": 12300.0
+    },
+    "weighted avg": {
+      "precision": 0.8859850122731483,
+      "recall": 0.8352845528455285,
+      "f1-score": 0.8477613179456148,
+      "support": 12300.0
+    }
+  }
+}

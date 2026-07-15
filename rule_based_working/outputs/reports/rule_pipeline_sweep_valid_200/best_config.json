@@ -1,0 +1,8 @@
+{
+  "crack_response_threshold": 35,
+  "min_area": 100,
+  "min_aspect_ratio": 2.5,
+  "max_extent": 0.8,
+  "closing_kernel_size": 7,
+  "closing_iterations": 1
+}

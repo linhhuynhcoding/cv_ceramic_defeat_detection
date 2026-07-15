@@ -1,0 +1,1312 @@
+[
+  {
+    "image_id": 0,
+    "file_name": "IMG_1261_000071_jpg.rf.ab9586350b24e3604ed072e703b9f9c0.jpg",
+    "predictions": [
+      {
+        "category": "crack",
+        "bbox": [
+          109.0,
+          115.0,
+          8.0,
+          23.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          2.0,
+          268.0,
+          34.0,
+          39.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          212.0,
+          277.0,
+          41.0,
+          31.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          399.0,
+          349.0,
+          59.0,
+          11.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          514.0,
+          349.0,
+          38.0,
+          11.0
+        ],
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "image_id": 1,
+    "file_name": "IMG_1269_000052_jpg.rf.f6e0aa481b64739f312c8bf6471d1450.jpg",
+    "predictions": [
+      {
+        "category": "crack",
+        "bbox": [
+          564.0,
+          69.0,
+          76.0,
+          18.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          466.0,
+          86.0,
+          80.0,
+          32.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          369.0,
+          123.0,
+          76.0,
+          15.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          274.0,
+          161.0,
+          52.0,
+          18.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          176.0,
+          179.0,
+          79.0,
+          17.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          0.0,
+          184.0,
+          69.0,
+          12.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          82.0,
+          191.0,
+          75.0,
+          11.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          4.0,
+          196.0,
+          63.0,
+          24.0
+        ],
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "image_id": 2,
+    "file_name": "IMG_1254_000038_jpg.rf.581fb93bcc846b6e7700d90cd1a14df6.jpg",
+    "predictions": [
+      {
+        "category": "crack",
+        "bbox": [
+          435.0,
+          0.0,
+          87.0,
+          28.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          537.0,
+          0.0,
+          86.0,
+          27.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          249.0,
+          48.0,
+          79.0,
+          79.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          443.0,
+          335.0,
+          87.0,
+          25.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          343.0,
+          338.0,
+          69.0,
+          22.0
+        ],
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "image_id": 3,
+    "file_name": "IMG_1276_000055_jpg.rf.b69c5763474cd2a40639d02fb419e669.jpg",
+    "predictions": [
+      {
+        "category": "crack",
+        "bbox": [
+          292.0,
+          0.0,
+          68.0,
+          51.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          470.0,
+          289.0,
+          93.0,
+          71.0
+        ],
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "image_id": 4,
+    "file_name": "IMG_1259_000042_jpg.rf.e517e01bc40f500dbcc6ea781c0c82b3.jpg",
+    "predictions": [
+      {
+        "category": "crack",
+        "bbox": [
+          135.0,
+          55.0,
+          43.0,
+          46.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          113.0,
+          144.0,
+          76.0,
+          58.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          133.0,
+          259.0,
+          36.0,
+          31.0
+        ],
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "image_id": 5,
+    "file_name": "IMG_1267_000037_jpg.rf.79da04e2e9eeebcbc7bebc1f76e464ac.jpg",
+    "predictions": [
+      {
+        "category": "crack",
+        "bbox": [
+          278.0,
+          59.0,
+          82.0,
+          76.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          0.0,
+          65.0,
+          70.0,
+          65.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          399.0,
+          270.0,
+          41.0,
+          62.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          474.0,
+          349.0,
+          64.0,
+          11.0
+        ],
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "image_id": 6,
+    "file_name": "IMG_1265_000079_jpg.rf.e3873f194c5154ff810e80b6ee5b0a56.jpg",
+    "predictions": [
+      {
+        "category": "crack",
+        "bbox": [
+          342.0,
+          2.0,
+          49.0,
+          19.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          401.0,
+          26.0,
+          11.0,
+          37.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          41.0,
+          174.0,
+          33.0,
+          23.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          140.0,
+          185.0,
+          31.0,
+          12.0
+        ],
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "image_id": 7,
+    "file_name": "IMG_1276_000018_jpg.rf.59561a4cb9e36d97e9991c84477f32bb.jpg",
+    "predictions": [
+      {
+        "category": "crack",
+        "bbox": [
+          83.0,
+          27.0,
+          15.0,
+          38.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          308.0,
+          116.0,
+          87.0,
+          80.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          613.0,
+          217.0,
+          27.0,
+          86.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          35.0,
+          228.0,
+          23.0,
+          60.0
+        ],
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "image_id": 8,
+    "file_name": "IMG_1263_000044_jpg.rf.d34aa86275b688ba7144f9e0559f649e.jpg",
+    "predictions": [
+      {
+        "category": "crack",
+        "bbox": [
+          562.0,
+          64.0,
+          27.0,
+          41.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          441.0,
+          135.0,
+          87.0,
+          18.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          385.0,
+          156.0,
+          39.0,
+          54.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          437.0,
+          328.0,
+          85.0,
+          32.0
+        ],
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "image_id": 9,
+    "file_name": "IMG_1261_000088_jpg.rf.1917f3f8a39f1609c433231aba0561af.jpg",
+    "predictions": [
+      {
+        "category": "crack",
+        "bbox": [
+          425.0,
+          133.0,
+          55.0,
+          62.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          527.0,
+          326.0,
+          91.0,
+          34.0
+        ],
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "image_id": 10,
+    "file_name": "IMG_1265_000017_jpg.rf.38de74f7ff75b781cc650aac522740c7.jpg",
+    "predictions": [
+      {
+        "category": "crack",
+        "bbox": [
+          447.0,
+          10.0,
+          35.0,
+          31.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          467.0,
+          34.0,
+          42.0,
+          48.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          347.0,
+          143.0,
+          82.0,
+          30.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          546.0,
+          153.0,
+          88.0,
+          22.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          482.0,
+          171.0,
+          47.0,
+          28.0
+        ],
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "image_id": 11,
+    "file_name": "IMG_1267_000047_jpg.rf.5da4974c73f1d9a4fabf479ce12a785e.jpg",
+    "predictions": [
+      {
+        "category": "crack",
+        "bbox": [
+          0.0,
+          101.0,
+          20.0,
+          43.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          354.0,
+          213.0,
+          24.0,
+          9.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          339.0,
+          351.0,
+          65.0,
+          9.0
+        ],
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "image_id": 12,
+    "file_name": "IMG_1219_000009_jpg.rf.b0a07ef926b9e26a7a37c3300539e20c.jpg",
+    "predictions": [
+      {
+        "category": "crack",
+        "bbox": [
+          324.0,
+          9.0,
+          41.0,
+          5.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          272.0,
+          42.0,
+          70.0,
+          7.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          123.0,
+          44.0,
+          50.0,
+          5.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          218.0,
+          44.0,
+          47.0,
+          5.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          460.0,
+          47.0,
+          51.0,
+          33.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          461.0,
+          83.0,
+          179.0,
+          42.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          132.0,
+          87.0,
+          9.0,
+          28.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          295.0,
+          119.0,
+          68.0,
+          29.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          37.0,
+          120.0,
+          27.0,
+          32.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          531.0,
+          164.0,
+          105.0,
+          41.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          368.0,
+          193.0,
+          50.0,
+          5.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          499.0,
+          196.0,
+          30.0,
+          30.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          54.0,
+          271.0,
+          9.0,
+          30.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          128.0,
+          309.0,
+          9.0,
+          30.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          515.0,
+          308.0,
+          125.0,
+          37.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          0.0,
+          339.0,
+          107.0,
+          21.0
+        ],
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "image_id": 13,
+    "file_name": "IMG_1269_000072_jpg.rf.f2470d13391a94a974c88c7545e48c9d.jpg",
+    "predictions": [
+      {
+        "category": "crack",
+        "bbox": [
+          490.0,
+          50.0,
+          81.0,
+          9.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          418.0,
+          52.0,
+          39.0,
+          9.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          132.0,
+          158.0,
+          54.0,
+          31.0
+        ],
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "image_id": 14,
+    "file_name": "IMG_1267_000046_jpg.rf.9c8aa91212e208a15eb3d2a4aea8c425.jpg",
+    "predictions": [
+      {
+        "category": "crack",
+        "bbox": [
+          22.0,
+          85.0,
+          28.0,
+          57.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          367.0,
+          351.0,
+          69.0,
+          9.0
+        ],
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "image_id": 15,
+    "file_name": "IMG_1219_000012_jpg.rf.276748f7515a3adf010f98918be22328.jpg",
+    "predictions": [
+      {
+        "category": "crack",
+        "bbox": [
+          321.0,
+          0.0,
+          76.0,
+          19.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          615.0,
+          0.0,
+          8.0,
+          21.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          266.0,
+          9.0,
+          36.0,
+          32.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          360.0,
+          11.0,
+          75.0,
+          43.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          573.0,
+          22.0,
+          67.0,
+          6.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          0.0,
+          37.0,
+          92.0,
+          39.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          74.0,
+          55.0,
+          285.0,
+          90.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          614.0,
+          61.0,
+          9.0,
+          26.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          6.0,
+          105.0,
+          42.0,
+          31.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          397.0,
+          122.0,
+          214.0,
+          60.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          557.0,
+          131.0,
+          83.0,
+          36.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          545.0,
+          164.0,
+          95.0,
+          72.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          409.0,
+          191.0,
+          60.0,
+          6.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          259.0,
+          228.0,
+          10.0,
+          27.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          215.0,
+          259.0,
+          72.0,
+          6.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          254.0,
+          301.0,
+          11.0,
+          29.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          25.0,
+          332.0,
+          86.0,
+          28.0
+        ],
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "image_id": 16,
+    "file_name": "IMG_1263_000012_jpg.rf.2f1d64952035cf70c240ef191292990c.jpg",
+    "predictions": [
+      {
+        "category": "crack",
+        "bbox": [
+          383.0,
+          173.0,
+          11.0,
+          30.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          382.0,
+          334.0,
+          82.0,
+          26.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          289.0,
+          340.0,
+          78.0,
+          20.0
+        ],
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "image_id": 17,
+    "file_name": "IMG_1259_000053_jpg.rf.d4ccb2788f8904ed1c9afdecea40411a.jpg",
+    "predictions": [
+      {
+        "category": "exfoliation",
+        "bbox": [
+          0.0,
+          221.0,
+          58.0,
+          76.0
+        ],
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "image_id": 18,
+    "file_name": "IMG_1261_000093_jpg.rf.37ebd1f1dfb3ed3104e9633a5f3e9751.jpg",
+    "predictions": [
+      {
+        "category": "crack",
+        "bbox": [
+          143.0,
+          0.0,
+          33.0,
+          11.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          237.0,
+          136.0,
+          42.0,
+          81.0
+        ],
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "image_id": 19,
+    "file_name": "IMG_1263_000009_jpg.rf.ec93ec44cc529f1aada8be95733c7356.jpg",
+    "predictions": [
+      {
+        "category": "crack",
+        "bbox": [
+          480.0,
+          48.0,
+          44.0,
+          74.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          82.0,
+          245.0,
+          37.0,
+          58.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          114.0,
+          287.0,
+          39.0,
+          22.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          297.0,
+          338.0,
+          56.0,
+          22.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          411.0,
+          345.0,
+          38.0,
+          15.0
+        ],
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "image_id": 20,
+    "file_name": "IMG_1219_000044_jpg.rf.275a0ffde3e9f61aefaf7efe0c6b3db7.jpg",
+    "predictions": [
+      {
+        "category": "crack",
+        "bbox": [
+          0.0,
+          0.0,
+          58.0,
+          4.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          458.0,
+          12.0,
+          15.0,
+          42.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          270.0,
+          14.0,
+          12.0,
+          33.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          569.0,
+          19.0,
+          71.0,
+          41.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          330.0,
+          104.0,
+          122.0,
+          10.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          171.0,
+          162.0,
+          12.0,
+          35.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          367.0,
+          163.0,
+          10.0,
+          36.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          67.0,
+          217.0,
+          10.0,
+          35.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          0.0,
+          355.0,
+          70.0,
+          5.0
+        ],
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "image_id": 21,
+    "file_name": "IMG_1265_000078_jpg.rf.c5e8fd24ea962b966c8a487bce2ad30b.jpg",
+    "predictions": [
+      {
+        "category": "crack",
+        "bbox": [
+          382.0,
+          9.0,
+          50.0,
+          19.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          275.0,
+          118.0,
+          62.0,
+          60.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          435.0,
+          127.0,
+          16.0,
+          40.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "crack",
+        "bbox": [
+          422.0,
+          243.0,
+          10.0,
+          25.0
+        ],
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "image_id": 22,
+    "file_name": "IMG_1276_000065_jpg.rf.9540aae9a366364570026e2aa31055fb.jpg",
+    "predictions": [
+      {
+        "category": "crack",
+        "bbox": [
+          0.0,
+          296.0,
+          16.0,
+          51.0
+        ],
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "image_id": 23,
+    "file_name": "IMG_1261_000018_jpg.rf.3039231c9d49987964022221ca8e3f39.jpg",
+    "predictions": [
+      {
+        "category": "crack",
+        "bbox": [
+          510.0,
+          183.0,
+          69.0,
+          50.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "exfoliation",
+        "bbox": [
+          478.0,
+          199.0,
+          104.0,
+          118.0
+        ],
+        "score": 1.0
+      },
+      {
+        "category": "exfoliation",
+        "bbox": [
+          402.0,
+          161.0,
+          72.0,
+          66.0
+        ],
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "image_id": 24,
+    "file_name": "IMG_1259_000055_jpg.rf.a6b6faa1e04c2b7882c172480d5ddd27.jpg",
+    "predictions": [
+      {
+        "category": "crack",
+        "bbox": [
+          594.0,
+          351.0,
+          24.0,
+          9.0
+        ],
+        "score": 1.0
+      }
+    ]
+  }
+]

@@ -1,0 +1,374 @@
+[
+  {
+    "params": {
+      "crack_response_threshold": 35,
+      "min_area": 120,
+      "min_aspect_ratio": 2.5,
+      "max_extent": 0.8,
+      "closing_kernel_size": 7,
+      "closing_iterations": 1
+    },
+    "ground_truth_counts": {
+      "crack": 2460,
+      "exfoliation": 138
+    },
+    "prediction_counts": {
+      "crack": 3083,
+      "exfoliation": 110
+    },
+    "crack": {
+      "iou_0.25": {
+        "true_positive": 891,
+        "false_positive": 2192,
+        "false_negative": 1569,
+        "precision": 0.28900421667207266,
+        "recall": 0.3621951219512195,
+        "f1": 0.3214865596247519,
+        "evaluated_images": 619,
+        "false_positives_per_image": 3.5411954765751212
+      },
+      "iou_0.50": {
+        "true_positive": 702,
+        "false_positive": 2381,
+        "false_negative": 1758,
+        "precision": 0.22770029192345118,
+        "recall": 0.28536585365853656,
+        "f1": 0.25329244091647124,
+        "evaluated_images": 619,
+        "false_positives_per_image": 3.8465266558966076
+      }
+    },
+    "exfoliation": {
+      "iou_0.25": {
+        "true_positive": 51,
+        "false_positive": 59,
+        "false_negative": 87,
+        "precision": 0.4636363636363636,
+        "recall": 0.3695652173913043,
+        "f1": 0.41129032258064513,
+        "evaluated_images": 619,
+        "false_positives_per_image": 0.09531502423263329
+      },
+      "iou_0.50": {
+        "true_positive": 8,
+        "false_positive": 102,
+        "false_negative": 130,
+        "precision": 0.07272727272727272,
+        "recall": 0.057971014492753624,
+        "f1": 0.06451612903225806,
+        "evaluated_images": 619,
+        "false_positives_per_image": 0.16478190630048464
+      }
+    }
+  },
+  {
+    "params": {
+      "crack_response_threshold": 35,
+      "min_area": 100,
+      "min_aspect_ratio": 2.0,
+      "max_extent": 0.65,
+      "closing_kernel_size": 7,
+      "closing_iterations": 1
+    },
+    "ground_truth_counts": {
+      "crack": 2460,
+      "exfoliation": 138
+    },
+    "prediction_counts": {
+      "crack": 3329,
+      "exfoliation": 110
+    },
+    "crack": {
+      "iou_0.25": {
+        "true_positive": 887,
+        "false_positive": 2442,
+        "false_negative": 1573,
+        "precision": 0.2664463802943827,
+        "recall": 0.36056910569105693,
+        "f1": 0.30644325444809123,
+        "evaluated_images": 619,
+        "false_positives_per_image": 3.9450726978998385
+      },
+      "iou_0.50": {
+        "true_positive": 692,
+        "false_positive": 2637,
+        "false_negative": 1768,
+        "precision": 0.2078702313006909,
+        "recall": 0.2813008130081301,
+        "f1": 0.23907410606322338,
+        "evaluated_images": 619,
+        "false_positives_per_image": 4.260096930533118
+      }
+    },
+    "exfoliation": {
+      "iou_0.25": {
+        "true_positive": 51,
+        "false_positive": 59,
+        "false_negative": 87,
+        "precision": 0.4636363636363636,
+        "recall": 0.3695652173913043,
+        "f1": 0.41129032258064513,
+        "evaluated_images": 619,
+        "false_positives_per_image": 0.09531502423263329
+      },
+      "iou_0.50": {
+        "true_positive": 8,
+        "false_positive": 102,
+        "false_negative": 130,
+        "precision": 0.07272727272727272,
+        "recall": 0.057971014492753624,
+        "f1": 0.06451612903225806,
+        "evaluated_images": 619,
+        "false_positives_per_image": 0.16478190630048464
+      }
+    }
+  },
+  {
+    "params": {
+      "crack_response_threshold": 35,
+      "min_area": 100,
+      "min_aspect_ratio": 2.5,
+      "max_extent": 0.65,
+      "closing_kernel_size": 3,
+      "closing_iterations": 2
+    },
+    "ground_truth_counts": {
+      "crack": 2460,
+      "exfoliation": 138
+    },
+    "prediction_counts": {
+      "crack": 2958,
+      "exfoliation": 110
+    },
+    "crack": {
+      "iou_0.25": {
+        "true_positive": 884,
+        "false_positive": 2074,
+        "false_negative": 1576,
+        "precision": 0.2988505747126437,
+        "recall": 0.359349593495935,
+        "f1": 0.3263196751568845,
+        "evaluated_images": 619,
+        "false_positives_per_image": 3.3505654281098547
+      },
+      "iou_0.50": {
+        "true_positive": 710,
+        "false_positive": 2248,
+        "false_negative": 1750,
+        "precision": 0.24002704530087898,
+        "recall": 0.2886178861788618,
+        "f1": 0.2620893318567737,
+        "evaluated_images": 619,
+        "false_positives_per_image": 3.631663974151858
+      }
+    },
+    "exfoliation": {
+      "iou_0.25": {
+        "true_positive": 51,
+        "false_positive": 59,
+        "false_negative": 87,
+        "precision": 0.4636363636363636,
+        "recall": 0.3695652173913043,
+        "f1": 0.41129032258064513,
+        "evaluated_images": 619,
+        "false_positives_per_image": 0.09531502423263329
+      },
+      "iou_0.50": {
+        "true_positive": 8,
+        "false_positive": 102,
+        "false_negative": 130,
+        "precision": 0.07272727272727272,
+        "recall": 0.057971014492753624,
+        "f1": 0.06451612903225806,
+        "evaluated_images": 619,
+        "false_positives_per_image": 0.16478190630048464
+      }
+    }
+  },
+  {
+    "params": {
+      "crack_response_threshold": 35,
+      "min_area": 100,
+      "min_aspect_ratio": 2.5,
+      "max_extent": 0.65,
+      "closing_kernel_size": 5,
+      "closing_iterations": 1
+    },
+    "ground_truth_counts": {
+      "crack": 2460,
+      "exfoliation": 138
+    },
+    "prediction_counts": {
+      "crack": 2853,
+      "exfoliation": 110
+    },
+    "crack": {
+      "iou_0.25": {
+        "true_positive": 880,
+        "false_positive": 1973,
+        "false_negative": 1580,
+        "precision": 0.30844724851034,
+        "recall": 0.35772357723577236,
+        "f1": 0.3312629399585922,
+        "evaluated_images": 619,
+        "false_positives_per_image": 3.1873990306946687
+      },
+      "iou_0.50": {
+        "true_positive": 704,
+        "false_positive": 2149,
+        "false_negative": 1756,
+        "precision": 0.246757798808272,
+        "recall": 0.2861788617886179,
+        "f1": 0.2650103519668737,
+        "evaluated_images": 619,
+        "false_positives_per_image": 3.47172859450727
+      }
+    },
+    "exfoliation": {
+      "iou_0.25": {
+        "true_positive": 51,
+        "false_positive": 59,
+        "false_negative": 87,
+        "precision": 0.4636363636363636,
+        "recall": 0.3695652173913043,
+        "f1": 0.41129032258064513,
+        "evaluated_images": 619,
+        "false_positives_per_image": 0.09531502423263329
+      },
+      "iou_0.50": {
+        "true_positive": 8,
+        "false_positive": 102,
+        "false_negative": 130,
+        "precision": 0.07272727272727272,
+        "recall": 0.057971014492753624,
+        "f1": 0.06451612903225806,
+        "evaluated_images": 619,
+        "false_positives_per_image": 0.16478190630048464
+      }
+    }
+  },
+  {
+    "params": {
+      "crack_response_threshold": 35,
+      "min_area": 100,
+      "min_aspect_ratio": 2.5,
+      "max_extent": 0.8,
+      "closing_kernel_size": 5,
+      "closing_iterations": 2
+    },
+    "ground_truth_counts": {
+      "crack": 2460,
+      "exfoliation": 138
+    },
+    "prediction_counts": {
+      "crack": 3058,
+      "exfoliation": 110
+    },
+    "crack": {
+      "iou_0.25": {
+        "true_positive": 878,
+        "false_positive": 2180,
+        "false_negative": 1582,
+        "precision": 0.2871157619359058,
+        "recall": 0.3569105691056911,
+        "f1": 0.31823124320405943,
+        "evaluated_images": 619,
+        "false_positives_per_image": 3.521809369951535
+      },
+      "iou_0.50": {
+        "true_positive": 686,
+        "false_positive": 2372,
+        "false_negative": 1774,
+        "precision": 0.22432962720732505,
+        "recall": 0.2788617886178862,
+        "f1": 0.24864081188836534,
+        "evaluated_images": 619,
+        "false_positives_per_image": 3.8319870759289176
+      }
+    },
+    "exfoliation": {
+      "iou_0.25": {
+        "true_positive": 51,
+        "false_positive": 59,
+        "false_negative": 87,
+        "precision": 0.4636363636363636,
+        "recall": 0.3695652173913043,
+        "f1": 0.41129032258064513,
+        "evaluated_images": 619,
+        "false_positives_per_image": 0.09531502423263329
+      },
+      "iou_0.50": {
+        "true_positive": 8,
+        "false_positive": 102,
+        "false_negative": 130,
+        "precision": 0.07272727272727272,
+        "recall": 0.057971014492753624,
+        "f1": 0.06451612903225806,
+        "evaluated_images": 619,
+        "false_positives_per_image": 0.16478190630048464
+      }
+    }
+  },
+  {
+    "params": {
+      "crack_response_threshold": 30,
+      "min_area": 120,
+      "min_aspect_ratio": 2.5,
+      "max_extent": 0.8,
+      "closing_kernel_size": 7,
+      "closing_iterations": 1
+    },
+    "ground_truth_counts": {
+      "crack": 2460,
+      "exfoliation": 138
+    },
+    "prediction_counts": {
+      "crack": 3166,
+      "exfoliation": 110
+    },
+    "crack": {
+      "iou_0.25": {
+        "true_positive": 878,
+        "false_positive": 2288,
+        "false_negative": 1582,
+        "precision": 0.27732154137713205,
+        "recall": 0.3569105691056911,
+        "f1": 0.3121222893707785,
+        "evaluated_images": 619,
+        "false_positives_per_image": 3.6962843295638126
+      },
+      "iou_0.50": {
+        "true_positive": 693,
+        "false_positive": 2473,
+        "false_negative": 1767,
+        "precision": 0.21888818698673404,
+        "recall": 0.2817073170731707,
+        "f1": 0.24635620334162814,
+        "evaluated_images": 619,
+        "false_positives_per_image": 3.995153473344103
+      }
+    },
+    "exfoliation": {
+      "iou_0.25": {
+        "true_positive": 51,
+        "false_positive": 59,
+        "false_negative": 87,
+        "precision": 0.4636363636363636,
+        "recall": 0.3695652173913043,
+        "f1": 0.41129032258064513,
+        "evaluated_images": 619,
+        "false_positives_per_image": 0.09531502423263329
+      },
+      "iou_0.50": {
+        "true_positive": 8,
+        "false_positive": 102,
+        "false_negative": 130,
+        "precision": 0.07272727272727272,
+        "recall": 0.057971014492753624,
+        "f1": 0.06451612903225806,
+        "evaluated_images": 619,
+        "false_positives_per_image": 0.16478190630048464
+      }
+    }
+  }
+]

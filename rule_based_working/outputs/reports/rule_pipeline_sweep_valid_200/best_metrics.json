@@ -1,0 +1,62 @@
+{
+  "params": {
+    "crack_response_threshold": 35,
+    "min_area": 100,
+    "min_aspect_ratio": 2.5,
+    "max_extent": 0.8,
+    "closing_kernel_size": 7,
+    "closing_iterations": 1
+  },
+  "ground_truth_counts": {
+    "crack": 725,
+    "exfoliation": 52
+  },
+  "prediction_counts": {
+    "crack": 1067,
+    "exfoliation": 36
+  },
+  "crack": {
+    "iou_0.25": {
+      "true_positive": 289,
+      "false_positive": 778,
+      "false_negative": 436,
+      "precision": 0.27085285848172447,
+      "recall": 0.3986206896551724,
+      "f1": 0.32254464285714285,
+      "evaluated_images": 200,
+      "false_positives_per_image": 3.89
+    },
+    "iou_0.50": {
+      "true_positive": 231,
+      "false_positive": 836,
+      "false_negative": 494,
+      "precision": 0.21649484536082475,
+      "recall": 0.31862068965517243,
+      "f1": 0.2578125,
+      "evaluated_images": 200,
+      "false_positives_per_image": 4.18
+    }
+  },
+  "exfoliation": {
+    "iou_0.25": {
+      "true_positive": 19,
+      "false_positive": 17,
+      "false_negative": 33,
+      "precision": 0.5277777777777778,
+      "recall": 0.36538461538461536,
+      "f1": 0.4318181818181818,
+      "evaluated_images": 200,
+      "false_positives_per_image": 0.085
+    },
+    "iou_0.50": {
+      "true_positive": 2,
+      "false_positive": 34,
+      "false_negative": 50,
+      "precision": 0.05555555555555555,
+      "recall": 0.038461538461538464,
+      "f1": 0.04545454545454546,
+      "evaluated_images": 200,
+      "false_positives_per_image": 0.17
+    }
+  }
+}
